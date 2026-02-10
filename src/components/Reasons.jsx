@@ -1,20 +1,12 @@
 import { motion } from 'framer-motion'
 import { useInView } from './useInView'
+import { useLanguage } from '../context/LanguageContext'
 
-const reasons = [
-  { emoji: '😊', text: 'Gülüşün dünyamı aydınlatıyor' },
-  { emoji: '🤗', text: 'Sarılman dünyanın en güzel hissi' },
-  { emoji: '💪', text: 'Beni her zaman destekliyorsun' },
-  { emoji: '🌟', text: 'Hayatıma anlam katıyorsun' },
-  { emoji: '🎵', text: 'Sesinle her şey güzelleşiyor' },
-  { emoji: '🧡', text: 'Kalbin çok güzel' },
-  { emoji: '🌈', text: 'Hayatıma renk katıyorsun' },
-  { emoji: '🔥', text: 'Her geçen gün daha çok seviyorum' },
-  { emoji: '🦋', text: 'Yanındayken kelebekler uçuşuyor' },
-]
+const emojis = ['😊', '🤗', '💪', '🌟', '🎵', '🧡', '🌈', '🔥', '🦋']
 
 function Reasons() {
   const [ref, isInView] = useInView(0.1)
+  const { t } = useLanguage()
 
   const containerVariants = {
     hidden: {},
@@ -47,7 +39,7 @@ function Reasons() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
-        Seni Sevmemin <span className="highlight">9 Sebebi</span> 💝
+        {t.reasons.title} <span className="highlight">{t.reasons.count}</span> 💝
       </motion.h2>
 
       <motion.div
@@ -56,7 +48,7 @@ function Reasons() {
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
       >
-        {reasons.map((reason, i) => (
+        {t.reasons.items.map((text, i) => (
           <motion.div
             key={i}
             className="reason-card"
@@ -78,9 +70,9 @@ function Reasons() {
                 repeatDelay: 3,
               }}
             >
-              {reason.emoji}
+              {emojis[i]}
             </motion.span>
-            <p className="reason-text">{reason.text}</p>
+            <p className="reason-text">{text}</p>
             <span className="reason-number">{i + 1}</span>
           </motion.div>
         ))}

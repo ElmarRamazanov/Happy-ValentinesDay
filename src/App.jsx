@@ -7,6 +7,7 @@ import LoveLetter from './components/LoveLetter'
 import Reasons from './components/Reasons'
 import Gallery from './components/Gallery'
 import FinalMessage from './components/FinalMessage'
+import LanguageSwitcher from './components/LanguageSwitcher'
 import './App.css'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           )
         )}
       </AnimatePresence>
+      <LanguageSwitcher />
     </div>
   )
 }

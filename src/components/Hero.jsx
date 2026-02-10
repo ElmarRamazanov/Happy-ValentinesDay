@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../context/LanguageContext'
 
 function Hero() {
-  const title = "Sevgililer Günün Kutlu Olsun"
+  const { t } = useLanguage()
+  const title = t.hero.title
 
   return (
     <section className="hero-section">
@@ -12,7 +14,7 @@ function Hero() {
         transition={{ type: 'spring', stiffness: 150, damping: 12, delay: 0.2 }}
       >
         <span className="hero-date">14</span>
-        <span className="hero-month">Şubat</span>
+        <span className="hero-month">{t.hero.month}</span>
       </motion.div>
 
       <motion.h1
@@ -64,7 +66,7 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.5, duration: 0.8 }}
       >
-        Seni seviyorum, bugün ve her gün... 💕
+        {t.hero.subtitle}
       </motion.p>
 
       <motion.div
@@ -76,7 +78,7 @@ function Hero() {
           y: { delay: 3.5, duration: 1.5, repeat: Infinity },
         }}
       >
-        <span>Aşağı kaydır</span>
+        <span>{t.hero.scroll}</span>
         <span className="scroll-arrow">↓</span>
       </motion.div>
     </section>

@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { useInView } from './useInView'
+import { useLanguage } from '../context/LanguageContext'
 
 function LoveLetter() {
   const [ref, isInView] = useInView(0.2)
+  const { t } = useLanguage()
 
   return (
     <section className="letter-section" ref={ref}>
@@ -27,16 +29,11 @@ function LoveLetter() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          Canım Benim,
+          {t.letter.greeting}
         </motion.h2>
 
         <div className="letter-body">
-          {[
-            "Seninle geçirdiğim her an, hayatımın en güzel anları oldu.",
-            "Gülüşün güneş gibi aydınlatıyor dünyamı, bakışlarınla kayboluyorum. Her gün seninle uyanmak, seninle uyumak istiyorum.",
-            "Sen benim en güzel rüyam, en derin nefesim, en sıcak kucaklaşmamsın.",
-            "Bu özel günde sana söylemek istediğim tek şey var: Seni çok ama çok seviyorum. 💗",
-          ].map((text, i) => (
+          {t.letter.paragraphs.map((text, i) => (
             <motion.p
               key={i}
               className="letter-paragraph"
@@ -55,7 +52,7 @@ function LoveLetter() {
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 2, type: 'spring', stiffness: 100 }}
         >
-          Sonsuza kadar senin 💕
+          {t.letter.signature}
         </motion.p>
 
         <div className="letter-decorations">

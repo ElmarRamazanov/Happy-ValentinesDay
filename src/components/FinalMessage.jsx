@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import { useInView } from './useInView'
 import { useState } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 
 function FinalMessage() {
   const [ref, isInView] = useInView(0.2)
   const [showSurprise, setShowSurprise] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <section className="final-section" ref={ref}>
@@ -46,7 +48,7 @@ function FinalMessage() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          Seni Çok Seviyorum
+          {t.final.title}
         </motion.h2>
 
         <motion.p
@@ -55,9 +57,9 @@ function FinalMessage() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          Sen benim dünyamsın, yıldızımsın, her şeyimsin.
+          {t.final.text1}
           <br />
-          Seninle her gün Sevgililer Günü. 💞
+          {t.final.text2}
         </motion.p>
 
         <motion.button
@@ -69,7 +71,7 @@ function FinalMessage() {
           whileTap={{ scale: 0.9 }}
           onClick={() => setShowSurprise(true)}
         >
-          Sürprizin Var! 🎁
+          {t.final.surpriseBtn}
         </motion.button>
 
         {showSurprise && (
@@ -93,9 +95,9 @@ function FinalMessage() {
               ))}
             </div>
             <p className="surprise-text">
-              Bugün ve her gün sadece senin için yaşıyorum!
+              {t.final.surpriseText}
               <br />
-              <span className="surprise-highlight">İyi ki varsın, iyi ki benimlesin! 💗</span>
+              <span className="surprise-highlight">{t.final.surpriseHighlight}</span>
             </p>
             <motion.div
               className="confetti-container"
@@ -136,7 +138,7 @@ function FinalMessage() {
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ delay: 2.5 }}
       >
-        Sonsuz sevgilerimle ❤️ 14 Şubat 2026
+        {t.final.footer}
       </motion.p>
     </section>
   )

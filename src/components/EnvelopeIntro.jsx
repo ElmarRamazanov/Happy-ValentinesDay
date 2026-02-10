@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 
 function EnvelopeIntro({ onOpen }) {
   const [isOpening, setIsOpening] = useState(false)
+  const { t } = useLanguage()
 
   const handleOpen = () => {
     setIsOpening(true)
@@ -65,7 +67,7 @@ function EnvelopeIntro({ onOpen }) {
         animate={{ opacity: isOpening ? 0 : 1, y: isOpening ? -20 : 0 }}
         transition={{ delay: 0.5, duration: 0.6 }}
       >
-        Sana özel bir mesajım var... 💕
+        {t.envelope.message}
       </motion.p>
 
       <motion.p
@@ -74,7 +76,7 @@ function EnvelopeIntro({ onOpen }) {
         animate={{ opacity: isOpening ? 0 : [0, 1, 0.5, 1] }}
         transition={{ delay: 1.2, duration: 2, repeat: Infinity }}
       >
-        Zarfa dokun ✨
+        {t.envelope.tap}
       </motion.p>
     </motion.div>
   )

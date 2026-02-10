@@ -1,17 +1,12 @@
 import { motion } from 'framer-motion'
 import { useInView } from './useInView'
+import { useLanguage } from '../context/LanguageContext'
 
-const moments = [
-  { emoji: '🥰', title: 'İlk Bakışımız', text: 'Gözlerine ilk baktığım an kalbim durdu' },
-  { emoji: '💑', title: 'İlk Buluşmamız', text: 'O gün dünya durmuş gibiydi' },
-  { emoji: '💕', title: 'İlk "Seni Seviyorum"', text: 'Kalbimden dökülen en güzel kelimeler' },
-  { emoji: '🌙', title: 'Geç Saatlere Kadar Konuşmalar', text: 'Saatler seninle durmuyor' },
-  { emoji: '🎉', title: 'Birlikte Güldüğümüz Anlar', text: 'Kahkahalarımız müzik gibi' },
-  { emoji: '🌅', title: 'Şu An ve Sonsuza Kadar', text: 'Her gün seni daha çok seviyorum' },
-]
+const momentEmojis = ['🥰', '💑', '💕', '🌙', '🎉', '🌅']
 
 function Gallery() {
   const [ref, isInView] = useInView(0.1)
+  const { t } = useLanguage()
 
   return (
     <section className="gallery-section" ref={ref}>
@@ -21,7 +16,7 @@ function Gallery() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
-        Bizim <span className="highlight">Hikayemiz</span> 💫
+        {t.gallery.title} <span className="highlight">{t.gallery.highlight}</span> 💫
       </motion.h2>
 
       <div className="timeline">
@@ -32,7 +27,7 @@ function Gallery() {
           transition={{ duration: 1.5, ease: 'easeOut' }}
         />
 
-        {moments.map((moment, i) => (
+        {t.gallery.moments.map((moment, i) => (
           <motion.div
             key={i}
             className={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}
@@ -67,7 +62,7 @@ function Gallery() {
                   ease: 'easeInOut',
                 }}
               >
-                {moment.emoji}
+                {momentEmojis[i]}
               </motion.span>
               <h3 className="timeline-title">{moment.title}</h3>
               <p className="timeline-text">{moment.text}</p>
