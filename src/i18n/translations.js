@@ -58,6 +58,11 @@ export const translations = {
       surpriseHighlight: 'İyi ki varsın, iyi ki benimlesin! 💗',
       footer: 'Sonsuz sevgilerimle ❤️ 14 Şubat 2026',
     },
+    credit: {
+      madeWith: '💻 ile yapıldı',
+      by: 'Elmar Ramazanov',
+      starText: 'Beğendiysen repoya ⭐ bırakmayı unutma!',
+    },
   },
 
   en: {
@@ -118,6 +123,11 @@ export const translations = {
       surpriseText: 'Today and every day, I live just for you!',
       surpriseHighlight: 'So glad you exist, so glad you\'re mine! 💗',
       footer: 'With endless love ❤️ February 14, 2026',
+    },
+    credit: {
+      madeWith: 'Made with 💻 by',
+      by: 'Elmar Ramazanov',
+      starText: 'If you liked it, don\'t forget to ⭐ the repo!',
     },
   },
 
@@ -180,6 +190,11 @@ export const translations = {
       surpriseHighlight: '¡Qué suerte que existes, qué suerte que eres mía! 💗',
       footer: 'Con amor infinito ❤️ 14 de Febrero, 2026',
     },
+    credit: {
+      madeWith: 'Hecho con 💻 por',
+      by: 'Elmar Ramazanov',
+      starText: 'Si te gustó, ¡no olvides dejar una ⭐ en el repo!',
+    },
   },
 
   fr: {
@@ -240,6 +255,11 @@ export const translations = {
       surpriseText: "Aujourd'hui et chaque jour, je vis rien que pour toi !",
       surpriseHighlight: 'Quelle chance que tu existes, que tu sois à moi ! 💗',
       footer: 'Avec un amour infini ❤️ 14 Février 2026',
+    },
+    credit: {
+      madeWith: 'Fait avec 💻 par',
+      by: 'Elmar Ramazanov',
+      starText: 'Si tu as aimé, n\'oublie pas de laisser une ⭐ sur le repo !',
     },
   },
 
@@ -302,6 +322,11 @@ export const translations = {
       surpriseHighlight: 'Wie schön, dass es dich gibt! 💗',
       footer: 'Mit unendlicher Liebe ❤️ 14. Februar 2026',
     },
+    credit: {
+      madeWith: 'Erstellt mit 💻 von',
+      by: 'Elmar Ramazanov',
+      starText: 'Wenn es dir gefallen hat, vergiss nicht einen ⭐ im Repo zu hinterlassen!',
+    },
   },
 
   ru: {
@@ -362,6 +387,11 @@ export const translations = {
       surpriseText: 'Сегодня и каждый день я живу только для тебя!',
       surpriseHighlight: 'Как хорошо что ты есть! 💗',
       footer: 'С бесконечной любовью ❤️ 14 Февраля 2026',
+    },
+    credit: {
+      madeWith: 'Сделано с 💻',
+      by: 'Elmar Ramazanov',
+      starText: 'Если понравилось, не забудь поставить ⭐ репозиторию!',
     },
   },
 
@@ -424,6 +454,11 @@ export const translations = {
       surpriseHighlight: '!ما أجمل وجودك في حياتي 💗',
       footer: 'مع حب لا نهاية له ❤️ 14 فبراير 2026',
     },
+    credit: {
+      madeWith: '💻 صنع بواسطة',
+      by: 'Elmar Ramazanov',
+      starText: '!إذا أعجبك، لا تنسَ ترك ⭐ في المستودع',
+    },
   },
 
   pt: {
@@ -484,6 +519,11 @@ export const translations = {
       surpriseText: 'Hoje e todos os dias, vivo só para você!',
       surpriseHighlight: 'Que bom que você existe, que bom que é meu/minha! 💗',
       footer: 'Com amor infinito ❤️ 14 de Fevereiro, 2026',
+    },
+    credit: {
+      madeWith: 'Feito com 💻 por',
+      by: 'Elmar Ramazanov',
+      starText: 'Se gostou, não esqueça de deixar uma ⭐ no repo!',
     },
   },
 }

@@ -7,6 +7,7 @@ import LoveLetter from './components/LoveLetter'
 import Reasons from './components/Reasons'
 import Gallery from './components/Gallery'
 import FinalMessage from './components/FinalMessage'
+import CreditFooter from './components/CreditFooter'
 import LanguageSwitcher from './components/LanguageSwitcher'
 import './App.css'
 
@@ -35,6 +36,7 @@ function App() {
               <Reasons />
               <Gallery />
               <FinalMessage />
+              <CreditFooter />
             </main>
           )
         )}
