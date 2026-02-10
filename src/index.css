@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --pink: #ff6b8a;
+  --pink-light: #ffa0b4;
+  --pink-lighter: #ffd4de;
+  --pink-dark: #e84670;
+  --rose: #ff4d6d;
+  --red: #c9184a;
+  --burgundy: #800f2f;
+  --cream: #fff5f7;
+  --white: #ffffff;
+  --gold: #ffd700;
+  --bg-gradient: linear-gradient(135deg, #fff5f7 0%, #ffe0e6 30%, #ffd4de 60%, #fff0f3 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  color: #4a2032;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pink-lighter);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--pink-light);
+  color: var(--white);
+}
